@@ -1,0 +1,6 @@
+<ol class="microposts">
+  <% @microposts.each do |f| %>
+    <span class= "content"><%= f.content %></span>
+  <% end %>
+  <%= will_paginate @microposts %>
+</ol>
