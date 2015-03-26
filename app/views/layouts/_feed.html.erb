@@ -1,9 +1,21 @@
-<li class="microposts">
-  <% @microposts.each do |f| %>
+<li class="questions">
+  <% @questions.each do |f| %>
     <span class= "content"><%= f.content %></span>
     <span class="timestamp">
     Posted <%= time_ago_in_words(f.created_at) %> ago.
     </span>
+    <% if aleady_pushed? %>
+      <input type=button name="iine" value="いいね" onClick="f_click()" disabled>
+    <% else %>
+      <%= form_for( f ) do |f| %>
+        <div><%= f.hidden_field :id %></div>
+        <%= f.submit "いいね", class: "btn btn- btn-primary" %>
+      <% end %>
+    <% end %>
+    <strong id = "counted">
+      <%= f.countnum %>
+    </strong>
   <% end %>
-  <%= will_paginate @microposts %>
+
+  <%= will_paginate @questions %>
 </li>

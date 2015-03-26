@@ -1,6 +1,6 @@
-class CreateMicroposts < ActiveRecord::Migration
+class Createquestions < ActiveRecord::Migration
   def change
-    create_table :microposts do |t|
+    create_table :questions do |t|
       t.string :content
 
       t.timestamps null: false

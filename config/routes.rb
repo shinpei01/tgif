@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'questions_pages/home'
-  root 'questions_pages#home'
-  resources :microposts
+  get 'questions/home'
+  root 'questions#home'
+  resources :questions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
