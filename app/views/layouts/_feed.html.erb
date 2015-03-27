@@ -1,21 +1,20 @@
 <li class="questions">
   <% @questions.each do |f| %>
+
     <span class= "content"><%= f.content %></span>
     <span class="timestamp">
     Posted <%= time_ago_in_words(f.created_at) %> ago.
     </span>
-    <% if aleady_pushed? %>
-      <input type=button name="iine" value="いいね" onClick="f_click()" disabled>
+    <% if aleady_pushed f.id %>
+      <input type=button value="いいね"  disabled>
     <% else %>
-      <%= form_for( f ) do |f| %>
-        <div><%= f.hidden_field :id %></div>
-        <%= f.submit "いいね", class: "btn btn- btn-primary" %>
+      <%= form_for( f, :html => {:class=>'like'}) do |f|%>
+        <%= f.submit "いいね", class: "btn btn-primary" %>
+        <%= f.hidden_field :id %>
       <% end %>
     <% end %>
     <strong id = "counted">
       <%= f.countnum %>
     </strong>
   <% end %>
-
-  <%= will_paginate @questions %>
 </li>

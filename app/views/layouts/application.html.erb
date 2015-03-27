@@ -7,56 +7,6 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
-
-    <Script language="JavaScript">
-    <!--
-    var cnt = 0;
-    var flg = true;
-
-    function f_click(){
-    if(flg){
-    cnt++;
-    document.getElementById('Ninzu').innerHTML=cnt;
-    }
-    }
-    //-->
-
-    <!--
-    function getExpires(dd){
-    var now = new Date();
-    var expires = new Date(now.getTime()+24*60*60*1000*dd);
-    return(expires.toGMTString());
-    }
-    function setCookie(key, value, limit){
-    var cValue = key + "=" + escape(value) + "END;expires=" + getExpires(limit) + ";";
-    document.cookie = cValue;
-    }
-
-    function getCookie(key){
-    var cValue = document.cookie;
-    var sIndex= cValue.indexOf(key,0);
-    if(sIndex > -1){
-    sIndex = cValue.indexOf("=", sIndex) + 1;
-    eIndex = cValue.indexOf("END", sIndex);
-    document.iine.disabled = true;
-    return unescape(cValue.substring(sIndex, eIndex));
-    $()
-    }else{
-    return "";
-    }
-    }
-    //-->
-
-
-    // <SCRIPT type="text/JavaScript">
-    // <!--
-    // var value = getCookie("visitCnt");
-    // cnt = parseInt(value) + 1;
-    // document.write("訪問" + cnt + "回目です。");
-    // setCookie("visitCnt", cnt, 365*2);
-    // -->
-    // </SCRIPT>
-    // </Script>
   </head>
   <body>
     <%= render 'layouts/header' %>
